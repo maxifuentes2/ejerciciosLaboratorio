@@ -99,6 +99,68 @@
     <main>
 
         <section>
+            <h2>📚 Teoría Básica sobre C</h2>
+            <ul>
+                <li><strong>Tipos de datos:</strong>
+                    <ul>
+                        <li><code>int</code>: Enteros (e.g., -1, 0, 42).</li>
+                        <li><code>float</code>: Números decimales de precisión simple (e.g., 3.14).</li>
+                        <li><code>double</code>: Números decimales de doble precisión.</li>
+                        <li><code>char</code>: Caracteres individuales (e.g., 'a').</li>
+                        <li><code>void</code>: Tipo vacío, usado para funciones que no retornan valores.</li>
+                    </ul>
+                </li>
+                <li><strong>Bucles:</strong>
+                    <ul>
+                        <li><code>for</code>: Se usa para iteraciones con un número conocido de repeticiones.</li>
+                        <li><code>while</code>: Se ejecuta mientras una condición sea verdadera.</li>
+                        <li><code>do-while</code>: Similar a <code>while</code>, pero garantiza al menos una ejecución.</li>
+                    </ul>
+                </li>
+                <li><strong>Condiciones:</strong>
+                    <ul>
+                        <li><code>if</code>: Ejecuta un bloque si la condición es verdadera.</li>
+                        <li><code>else</code>: Ejecuta un bloque si la condición del <code>if</code> es falsa.</li>
+                        <li><code>else if</code>: Evalúa múltiples condiciones.</li>
+                        <li><code>switch</code>: Selecciona entre múltiples casos basados en un valor.</li>
+                    </ul>
+                </li>
+                <li><strong>Operadores relacionales:</strong>
+                    <ul>
+                        <li><code>==</code>: Igualdad.</li>
+                        <li><code>!=</code>: Diferente.</li>
+                        <li><code>&lt;</code>: Menor que.</li>
+                        <li><code>&gt;</code>: Mayor que.</li>
+                        <li><code>&lt;=</code>: Menor o igual que.</li>
+                        <li><code>&gt;=</code>: Mayor o igual que.</li>
+                    </ul>
+                </li>
+                <li><strong>Operadores lógicos:</strong>
+                    <ul>
+                        <li><code>&&</code>: Y lógico (AND).</li>
+                        <li><code>||</code>: O lógico (OR).</li>
+                        <li><code>!</code>: Negación lógica (NOT).</li>
+                    </ul>
+                </li>
+                <li><strong>Arreglos:</strong>
+                    <ul>
+                        <li>Un arreglo es una colección de elementos del mismo tipo.</li>
+                        <li>Se accede a los elementos usando índices (e.g., <code>arreglo[0]</code>).</li>
+                        <li>Los índices comienzan en 0.</li>
+                    </ul>
+                </li>
+                <li><strong>Entrada y salida:</strong>
+                    <ul>
+                        <li><code>printf</code>: Imprime texto en la consola.</li>
+                        <li><code>scanf</code>: Lee datos desde la entrada estándar.</li>
+                        <li><code>gets</code>: Lee una línea completa de texto (no recomendado por problemas de seguridad).</li>
+                        <li><code>fgets</code>: Alternativa segura para leer cadenas.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section>
             <h2>🧪 Ejercicios</h2>
 
             <h3>🔢 Ejercicio 1: Operaciones con arreglos</h3>
@@ -164,22 +226,6 @@
                 <li>Se define un arreglo de tipo <code>double</code> para almacenar las notas.</li>
                 <li>Se implementa una función que calcula el promedio sumando todas las notas y dividiendo por la cantidad.</li>
                 <li>Se imprime el promedio con tres decimales utilizando <code>printf()</code>.</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>⚠️ Errores Comunes</h2>
-            <ul>
-                <li>❌ Usar <code>i <= TAMANIO</code> en lugar de <code>i < TAMANIO</code>.</li>
-                <li>❌ División entera en promedio (se trunca).</li>
-                <li>❌ Olvidar inicializar arreglos o variables antes de usarlos.</li>
-                <li>❌ Usar <code>==</code> en lugar de <code>=</code> al asignar.</li>
-                <li>❌ No incluir <code>#include</code> necesarios para funciones como <code>strlen</code>, <code>rand</code>, <code>toupper</code>.</li>
-                <li>❌ No limpiar el buffer de entrada con <code>fflush(stdin)</code> o manejar correctamente <code>fgets</code> después de <code>scanf</code>.</li>
-                <li>❌ Confundir <code>'a'</code> (carácter) con <code>"a"</code> (cadena).</li>
-                <li>❌ No terminar las cadenas con <code>'\0'</code> si se modifican manualmente.</li>
-                <li>❌ Desbordamiento de búfer al leer más caracteres de los que el arreglo permite.</li>
-                <li>❌ No usar <code>return 0;</code> en <code>main()</code> (buena práctica).</li>
             </ul>
         </section>
 
