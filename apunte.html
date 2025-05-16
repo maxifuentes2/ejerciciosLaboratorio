@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Resumen C</title>
+    <style>
+        :root {
+            --bg: #1e1e1e;
+            --card-bg: #2c2c2c;
+            --text: #e0e0e0;
+            --muted: #a0a0a0;
+            --accent: #00e676;
+            --border: #3d3d3d;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--card-bg);
+            color: var(--accent);
+            padding: 1.5rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        main {
+            max-width: 800px;
+            margin: auto;
+            padding: 2rem 1rem;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h1,
+        h2 {
+            margin-top: 0;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            margin-top: 1.2rem;
+            color: var(--accent);
+        }
+
+        ul {
+            padding-left: 1.2rem;
+            list-style-type: none;
+        }
+
+        ul li::before {
+            content: "🟢";
+            margin-right: 0.5rem;
+        }
+
+        code {
+            background-color: #424242;
+            padding: 0.2rem 0.4rem;
+            border-radius: 6px;
+            color: var(--accent);
+            font-family: monospace;
+        }
+
+        @media (max-width: 600px) {
+            main {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>📗 Resumen de Programación en C</h1>
+    </header>
+    <main>
+
+        <section>
+            <h2>🧪 Ejercicios</h2>
+
+            <h3>🔢 Ejercicio 1: Operaciones con arreglos</h3>
+            <ul>
+                <li>Se define un arreglo de tamaño fijo (<code>int arreglo[TAMANIO]</code>).</li>
+                <li>Se inicializa con valores aleatorios generados con <code>rand()</code>.</li>
+                <li>Se calcula el promedio sumando todos los elementos y dividiendo por el tamaño del arreglo.</li>
+                <li>Se busca el número más alto y más bajo recorriendo el arreglo y comparando cada elemento.</li>
+                <li>Se imprimen los resultados, incluyendo las posiciones de los valores máximo y mínimo.</li>
+            </ul>
+
+            <h3>➕ Ejercicio 2: Suma de vectores</h3>
+            <ul>
+                <li>Se definen tres arreglos: <code>A</code>, <code>B</code> y <code>C</code>, todos del mismo tamaño.</li>
+                <li>Los arreglos <code>A</code> y <code>B</code> se llenan con valores aleatorios.</li>
+                <li>El arreglo <code>C</code> almacena la suma de los valores correspondientes de <code>A</code> y <code>B</code>.</li>
+                <li>Se imprime el contenido del arreglo <code>C</code> mostrando la suma de cada posición.</li>
+            </ul>
+
+            <h3>📈 Ejercicio 3: Frecuencia</h3>
+            <ul>
+                <li>Se genera un arreglo de 100 números aleatorios entre 1 y 100.</li>
+                <li>Se utiliza un segundo arreglo (<code>frecuencia</code>) para contar cuántas veces aparece cada número.</li>
+                <li>Se recorre el arreglo de frecuencia para determinar el número que más se repite.</li>
+                <li>Se imprimen los resultados, incluyendo el número más repetido y su cantidad de repeticiones.</li>
+            </ul>
+
+            <h3>🔄 Ejercicio 4: Palíndromos</h3>
+            <ul>
+                <li>Se lee una cadena de texto ingresada por el usuario.</li>
+                <li>Se compara el primer carácter con el último, el segundo con el penúltimo, y así sucesivamente.</li>
+                <li>Se utiliza <code>toupper()</code> para ignorar diferencias entre mayúsculas y minúsculas.</li>
+                <li>Se imprime si la cadena es un palíndromo o no.</li>
+                <li>Se permite al usuario realizar múltiples verificaciones mediante un bucle.</li>
+            </ul>
+
+            <h3>🔍 Ejercicio 5: Subcadenas</h3>
+            <ul>
+                <li>Se leen dos cadenas de texto: una principal y una subcadena.</li>
+                <li>Se utiliza la función <code>strstr()</code> para verificar si la subcadena está contenida en la cadena principal.</li>
+                <li>Se imprimen los resultados indicando si la subcadena fue encontrada o no.</li>
+            </ul>
+
+            <h3>🔁 Ejercicio 6: Rotación de vectores</h3>
+            <ul>
+                <li>Se comparan dos vectores para determinar si son iguales considerando rotaciones circulares.</li>
+                <li>Se utiliza un bucle para probar todas las posibles rotaciones del segundo vector.</li>
+                <li>Se emplea la operación modular (<code>(i + offset) % n</code>) para manejar índices circulares.</li>
+                <li>Se imprime si los vectores son iguales o no.</li>
+            </ul>
+
+            <h3>⚽ Ejercicio 7: Resultados de partidos</h3>
+            <ul>
+                <li>Se simulan los resultados de 10 partidos generando goles anotados y recibidos aleatoriamente.</li>
+                <li>Se calculan los promedios de goles anotados y recibidos.</li>
+                <li>Se determina el partido con más goles anotados y el partido con más goles recibidos.</li>
+                <li>Se cuentan los partidos ganados y perdidos.</li>
+                <li>Se imprimen todos los resultados, incluyendo estadísticas detalladas.</li>
+            </ul>
+
+            <h3>📊 Ejercicio 8: Promedio de notas</h3>
+            <ul>
+                <li>Se define un arreglo de tipo <code>double</code> para almacenar las notas.</li>
+                <li>Se implementa una función que calcula el promedio sumando todas las notas y dividiendo por la cantidad.</li>
+                <li>Se imprime el promedio con tres decimales utilizando <code>printf()</code>.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>⚠️ Errores Comunes</h2>
+            <ul>
+                <li>❌ Usar <code>i <= TAMANIO</code> en lugar de <code>i < TAMANIO</code>.</li>
+                <li>❌ División entera en promedio (se trunca).</li>
+                <li>❌ Olvidar inicializar arreglos o variables antes de usarlos.</li>
+                <li>❌ Usar <code>==</code> en lugar de <code>=</code> al asignar.</li>
+                <li>❌ No incluir <code>#include</code> necesarios para funciones como <code>strlen</code>, <code>rand</code>, <code>toupper</code>.</li>
+                <li>❌ No limpiar el buffer de entrada con <code>fflush(stdin)</code> o manejar correctamente <code>fgets</code> después de <code>scanf</code>.</li>
+                <li>❌ Confundir <code>'a'</code> (carácter) con <code>"a"</code> (cadena).</li>
+                <li>❌ No terminar las cadenas con <code>'\0'</code> si se modifican manualmente.</li>
+                <li>❌ Desbordamiento de búfer al leer más caracteres de los que el arreglo permite.</li>
+                <li>❌ No usar <code>return 0;</code> en <code>main()</code> (buena práctica).</li>
+            </ul>
+        </section>
+
+    </main>
+</body>
+</html>
