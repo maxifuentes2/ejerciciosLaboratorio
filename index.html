@@ -3,232 +3,207 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Resumen C</title>
-    <style>
-        :root {
-            --bg: #1e1e1e;
-            --card-bg: #2c2c2c;
-            --text: #e0e0e0;
-            --muted: #a0a0a0;
-            --accent: #00e676;
-            --border: #3d3d3d;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-        }
-
-        header {
-            background-color: var(--card-bg);
-            color: var(--accent);
-            padding: 1.5rem;
-            text-align: center;
-            border-bottom: 1px solid var(--border);
-        }
-
-        main {
-            max-width: 800px;
-            margin: auto;
-            padding: 2rem 1rem;
-        }
-
-        section {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        h1,
-        h2 {
-            margin-top: 0;
-        }
-
-        h2 {
-            font-size: 1.4rem;
-            color: var(--accent);
-            margin-bottom: 1rem;
-        }
-
-        h3 {
-            font-size: 1.1rem;
-            margin-top: 1.2rem;
-            color: var(--accent);
-        }
-
-        ul {
-            padding-left: 1.2rem;
-            list-style-type: none;
-        }
-
-        ul li::before {
-            content: "🟢";
-            margin-right: 0.5rem;
-        }
-
-        code {
-            background-color: #424242;
-            padding: 0.2rem 0.4rem;
-            border-radius: 6px;
-            color: var(--accent);
-            font-family: monospace;
-        }
-
-        @media (max-width: 600px) {
-            main {
-                padding: 1rem;
-            }
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apunte Teórico sobre Conceptos en C</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-    <header>
-        <h1>📗 Resumen de Programación en C</h1>
-    </header>
-    <main>
+    <div class="container">
+        <h1>Apunte Teórico sobre Conceptos Utilizados en C</h1>
 
-        <section>
-            <h2>📚 Teoría Básica sobre C</h2>
-            <ul>
-                <li><strong>Tipos de datos:</strong>
-                    <ul>
-                        <li><code>int</code>: Enteros (e.g., -1, 0, 42).</li>
-                        <li><code>float</code>: Números decimales de precisión simple (e.g., 3.14).</li>
-                        <li><code>double</code>: Números decimales de doble precisión.</li>
-                        <li><code>char</code>: Caracteres individuales (e.g., 'a').</li>
-                        <li><code>void</code>: Tipo vacío, usado para funciones que no retornan valores.</li>
-                    </ul>
-                </li>
-                <li><strong>Bucles:</strong>
-                    <ul>
-                        <li><code>for</code>: Se usa para iteraciones con un número conocido de repeticiones.</li>
-                        <li><code>while</code>: Se ejecuta mientras una condición sea verdadera.</li>
-                        <li><code>do-while</code>: Similar a <code>while</code>, pero garantiza al menos una ejecución.</li>
-                    </ul>
-                </li>
-                <li><strong>Condiciones:</strong>
-                    <ul>
-                        <li><code>if</code>: Ejecuta un bloque si la condición es verdadera.</li>
-                        <li><code>else</code>: Ejecuta un bloque si la condición del <code>if</code> es falsa.</li>
-                        <li><code>else if</code>: Evalúa múltiples condiciones.</li>
-                        <li><code>switch</code>: Selecciona entre múltiples casos basados en un valor.</li>
-                    </ul>
-                </li>
-                <li><strong>Operadores relacionales:</strong>
-                    <ul>
-                        <li><code>==</code>: Igualdad.</li>
-                        <li><code>!=</code>: Diferente.</li>
-                        <li><code>&lt;</code>: Menor que.</li>
-                        <li><code>&gt;</code>: Mayor que.</li>
-                        <li><code>&lt;=</code>: Menor o igual que.</li>
-                        <li><code>&gt;=</code>: Mayor o igual que.</li>
-                    </ul>
-                </li>
-                <li><strong>Operadores lógicos:</strong>
-                    <ul>
-                        <li><code>&&</code>: Y lógico (AND).</li>
-                        <li><code>||</code>: O lógico (OR).</li>
-                        <li><code>!</code>: Negación lógica (NOT).</li>
-                    </ul>
-                </li>
-                <li><strong>Arreglos:</strong>
-                    <ul>
-                        <li>Un arreglo es una colección de elementos del mismo tipo.</li>
-                        <li>Se accede a los elementos usando índices (e.g., <code>arreglo[0]</code>).</li>
-                        <li>Los índices comienzan en 0.</li>
-                    </ul>
-                </li>
-                <li><strong>Entrada y salida:</strong>
-                    <ul>
-                        <li><code>printf</code>: Imprime texto en la consola.</li>
-                        <li><code>scanf</code>: Lee datos desde la entrada estándar.</li>
-                        <li><code>gets</code>: Lee una línea completa de texto (no recomendado por problemas de seguridad).</li>
-                        <li><code>fgets</code>: Alternativa segura para leer cadenas.</li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
+        <h2>1. Estructuras de Control</h2>
 
-        <section>
-            <h2>🧪 Ejercicios</h2>
+        <h3>a. Bucle <code>for</code></h3>
+        <p>
+            Se utiliza para repetir un bloque de código un número fijo de veces.<br>
+            <strong>Sintaxis:</strong>
+        </p>
+        <pre><code>for (inicialización; condición; incremento) {
+    // Código a ejecutar
+}</code></pre>
+        <p><strong>Ejemplo:</strong></p>
+        <pre><code>// Imprimir los números del 1 al 5
+for (int i = 1; i <= 5; i++) {
+    printf("%d\n", i);
+}</code></pre>
 
-            <h3>🔢 Ejercicio 1: Operaciones con arreglos</h3>
-            <ul>
-                <li>Se define un arreglo de tamaño fijo (<code>int arreglo[TAMANIO]</code>).</li>
-                <li>Se inicializa con valores aleatorios generados con <code>rand()</code>.</li>
-                <li>Se calcula el promedio sumando todos los elementos y dividiendo por el tamaño del arreglo.</li>
-                <li>Se busca el número más alto y más bajo recorriendo el arreglo y comparando cada elemento.</li>
-                <li>Se imprimen los resultados, incluyendo las posiciones de los valores máximo y mínimo.</li>
-            </ul>
+        <h3>b. Bucle <code>while</code></h3>
+        <p>
+            Se utiliza para repetir un bloque de código mientras una condición sea verdadera.<br>
+            <strong>Sintaxis:</strong>
+        </p>
+        <pre><code>while (condición) {
+    // Código a ejecutar
+}</code></pre>
+        <p><strong>Ejemplo:</strong></p>
+        <pre><code>// Imprimir los números del 1 al 5
+int i = 1;
+while (i <= 5) {
+    printf("%d\n", i);
+    i++;
+}</code></pre>
 
-            <h3>➕ Ejercicio 2: Suma de vectores</h3>
-            <ul>
-                <li>Se definen tres arreglos: <code>A</code>, <code>B</code> y <code>C</code>, todos del mismo tamaño.</li>
-                <li>Los arreglos <code>A</code> y <code>B</code> se llenan con valores aleatorios.</li>
-                <li>El arreglo <code>C</code> almacena la suma de los valores correspondientes de <code>A</code> y <code>B</code>.</li>
-                <li>Se imprime el contenido del arreglo <code>C</code> mostrando la suma de cada posición.</li>
-            </ul>
+        <h3>c. Condicional <code>if</code></h3>
+        <p>
+            Se utiliza para tomar decisiones basadas en una condición.<br>
+            <strong>Sintaxis:</strong>
+        </p>
+        <pre><code>if (condición) {
+    // Código si la condición es verdadera
+} else {
+    // Código si la condición es falsa
+}</code></pre>
+        <p><strong>Ejemplo:</strong></p>
+        <pre><code>// Verificar si un número es positivo o negativo
+int numero = -5;
+if (numero > 0) {
+    printf("El número es positivo.");
+} else {
+    printf("El número es negativo.");
+}</code></pre>
 
-            <h3>📈 Ejercicio 3: Frecuencia</h3>
-            <ul>
-                <li>Se genera un arreglo de 100 números aleatorios entre 1 y 100.</li>
-                <li>Se utiliza un segundo arreglo (<code>frecuencia</code>) para contar cuántas veces aparece cada número.</li>
-                <li>Se recorre el arreglo de frecuencia para determinar el número que más se repite.</li>
-                <li>Se imprimen los resultados, incluyendo el número más repetido y su cantidad de repeticiones.</li>
-            </ul>
+        <h2>2. Funciones</h2>
+        <p>
+            Las funciones encapsulan lógica reutilizable y permiten dividir el código en bloques más manejables.<br>
+            <strong>Sintaxis:</strong>
+        </p>
+        <pre><code>tipo_de_retorno nombre_función(tipo_parametro nombre_parametro, ...) {
+    // Código de la función
+    return valor;
+}</code></pre>
+        <p><strong>Ejemplo:</strong></p>
+        <pre><code>// Función para calcular el promedio de un arreglo
+double average(double marks[], int size) {
+    double sum = 0;
+    for (int i = 0; i < size; i++) {
+        sum += marks[i];
+    }
+    return sum / size;
+}</code></pre>
 
-            <h3>🔄 Ejercicio 4: Palíndromos</h3>
-            <ul>
-                <li>Se lee una cadena de texto ingresada por el usuario.</li>
-                <li>Se compara el primer carácter con el último, el segundo con el penúltimo, y así sucesivamente.</li>
-                <li>Se utiliza <code>toupper()</code> para ignorar diferencias entre mayúsculas y minúsculas.</li>
-                <li>Se imprime si la cadena es un palíndromo o no.</li>
-                <li>Se permite al usuario realizar múltiples verificaciones mediante un bucle.</li>
-            </ul>
+        <h2>3. Arreglos</h2>
+        <p>
+            Los arreglos son estructuras que almacenan múltiples valores del mismo tipo en posiciones consecutivas de
+            memoria.<br>
+            <strong>Sintaxis:</strong> <code>tipo nombre_arreglo[tamaño];</code>
+        </p>
+        <p><strong>Ejemplo:</strong></p>
+        <pre><code>// Crear un arreglo de 5 enteros
+int arreglo[5] = {1, 2, 3, 4, 5};
+printf("El primer elemento es: %d\n", arreglo[0]);</code></pre>
 
-            <h3>🔍 Ejercicio 5: Subcadenas</h3>
-            <ul>
-                <li>Se leen dos cadenas de texto: una principal y una subcadena.</li>
-                <li>Se utiliza la función <code>strstr()</code> para verificar si la subcadena está contenida en la cadena principal.</li>
-                <li>Se imprimen los resultados indicando si la subcadena fue encontrada o no.</li>
-            </ul>
+        <h2>4. Cadenas de Texto</h2>
+        <p>
+            Las cadenas son arreglos de caracteres terminados en <code>'\0'</code>.<br>
+            Funciones comunes:
+        </p>
+        <ul>
+            <li><code>strlen</code>: Devuelve la longitud de una cadena.</li>
+            <li><code>strstr</code>: Busca una subcadena dentro de otra.</li>
+            <li><code>toupper</code>: Convierte un carácter a mayúscula.</li>
+        </ul>
+        <p><strong>Ejemplo:</strong></p>
+        <pre><code>char cadena[] = "Hola";
+printf("La longitud de la cadena es: %lu\n", strlen(cadena));</code></pre>
 
-            <h3>🔁 Ejercicio 6: Rotación de vectores</h3>
-            <ul>
-                <li>Se comparan dos vectores para determinar si son iguales considerando rotaciones circulares.</li>
-                <li>Se utiliza un bucle para probar todas las posibles rotaciones del segundo vector.</li>
-                <li>Se emplea la operación modular (<code>(i + offset) % n</code>) para manejar índices circulares.</li>
-                <li>Se imprime si los vectores son iguales o no.</li>
-            </ul>
+        <h2>5. Generación de Números Aleatorios</h2>
+        <p>
+            Se utiliza <code>rand()</code> para generar números pseudoaleatorios.<br>
+            Para inicializar la semilla, se usa <code>srand(time(NULL))</code>.
+        </p>
+        <p><strong>Ejemplo:</strong></p>
+        <pre><code>srand(time(NULL));
+int numero = rand() % 100; // Número aleatorio entre 0 y 99
+printf("Número aleatorio: %d\n", numero);</code></pre>
 
-            <h3>⚽ Ejercicio 7: Resultados de partidos</h3>
-            <ul>
-                <li>Se simulan los resultados de 10 partidos generando goles anotados y recibidos aleatoriamente.</li>
-                <li>Se calculan los promedios de goles anotados y recibidos.</li>
-                <li>Se determina el partido con más goles anotados y el partido con más goles recibidos.</li>
-                <li>Se cuentan los partidos ganados y perdidos.</li>
-                <li>Se imprimen todos los resultados, incluyendo estadísticas detalladas.</li>
-            </ul>
+        <h2>6. Constantes y Defines</h2>
+        <p>
+            Se utilizan para definir valores constantes que no cambian durante la ejecución del programa.<br>
+            <strong>Sintaxis:</strong> <code>#define NOMBRE_VALOR valor</code>
+        </p>
+        <p><strong>Ejemplo:</strong></p>
+        <pre><code>#define MAX_GOLES 6
+printf("El máximo de goles es: %d\n", MAX_GOLES);</code></pre>
 
-            <h3>📊 Ejercicio 8: Promedio de notas</h3>
-            <ul>
-                <li>Se define un arreglo de tipo <code>double</code> para almacenar las notas.</li>
-                <li>Se implementa una función que calcula el promedio sumando todas las notas y dividiendo por la cantidad.</li>
-                <li>Se imprime el promedio con tres decimales utilizando <code>printf()</code>.</li>
-            </ul>
-        </section>
+        <h2>7. Tipos de Datos</h2>
+        <p>
+            - <code>int</code>: Enteros (e.g., 1, 2, 3).<br>
+            - <code>float</code> y <code>double</code>: Números con decimales (e.g., 3.14, 2.718).<br>
+            - <code>char</code>: Caracteres (e.g., 'a', 'b').<br>
+            - <code>bool</code>: Valores booleanos (requiere <code>&lt;stdbool.h&gt;</code>).
+        </p>
 
-    </main>
+        <h2>8. Entrada y Salida</h2>
+        <p>
+            <code>printf</code>: Imprime texto en la consola.<br>
+            <code>scanf</code>: Lee datos desde la entrada estándar.
+        </p>
+        <p><strong>Ejemplo:</strong></p>
+        <pre><code>int numero;
+printf("Ingrese un número: ");
+scanf("%d", &numero);
+printf("El número ingresado es: %d\n", numero);</code></pre>
+
+        <h2>9. Manejo de Matrices</h2>
+        <p>
+            Las matrices son arreglos bidimensionales.<br>
+            <strong>Sintaxis:</strong> <code>tipo nombre_matriz[filas][columnas];</code>
+        </p>
+        <p><strong>Ejemplo:</strong></p>
+        <pre><code>int matriz[2][3] = {
+    {1, 2, 3},
+    {4, 5, 6}
+};
+printf("El elemento en la posición [1][2] es: %d\n", matriz[1][2]);</code></pre>
+
+        <h2>10. Operadores</h2>
+        <p>
+            - Aritméticos: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code>.<br>
+            - Relacionales: <code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>,
+            <code>&gt;=</code>.<br>
+            - Lógicos: <code>&amp;&amp;</code>, <code>||</code>, <code>!</code>.
+        </p>
+        <p><strong>Ejemplo:</strong></p>
+        <pre><code>int a = 5, b = 10;
+if (a < b && b > 0) {
+    printf("a es menor que b y b es positivo.\n");
+}</code></pre>
+
+        <h2>11. Librerías Utilizadas</h2>
+        <p>
+            - <code>&lt;stdio.h&gt;</code>: Para entrada y salida estándar.<br>
+            - <code>&lt;stdlib.h&gt;</code>: Para funciones como <code>rand</code> y <code>srand</code>.<br>
+            - <code>&lt;string.h&gt;</code>: Para manipulación de cadenas.<br>
+            - <code>&lt;ctype.h&gt;</code>: Para funciones de manipulación de caracteres.<br>
+            - <code>&lt;stdbool.h&gt;</code>: Para trabajar con valores booleanos.<br>
+            - <code>&lt;time.h&gt;</code>: Para trabajar con tiempo y generar números aleatorios.
+        </p>
+
+        <h2>12. Ejemplos Prácticos</h2>
+        <p><strong>Promedio de un arreglo:</strong></p>
+        <pre><code>double notas[] = {7.5, 8.0, 6.5};
+int cantidad = 3;
+double promedio = average(notas, cantidad);
+printf("El promedio es: %.2f\n", promedio);</code></pre>
+
+        <p><strong>Comparar vectores en orden relativo:</strong></p>
+        <pre><code>char arreglo1[] = {'A', 'B', 'C'};
+char arreglo2[] = {'C', 'A', 'B'};
+if (sonIguales(arreglo1, arreglo2, 3)) {
+    printf("Los vectores son iguales.\n");
+} else {
+    printf("Los vectores no son iguales.\n");
+}</code></pre>
+
+        <p><strong>Determinar si una cadena es palíndromo:</strong></p>
+        <pre><code>char palabra[] = "NEUQUEN";
+if (esPalindromo(palabra)) {
+    printf("La palabra es un palíndromo.\n");
+} else {
+    printf("La palabra no es un palíndromo.\n");
+}</code></pre>
+    </div>
 </body>
+
 </html>
