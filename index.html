@@ -2,320 +2,233 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Guía Completa de Funciones Utilizadas en los Ejercicios</title>
-    <!-- Puedes incluir una fuente de Google Fonts si lo deseas -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Resumen C</title>
+    <style>
+        :root {
+            --bg: #1e1e1e;
+            --card-bg: #2c2c2c;
+            --text: #e0e0e0;
+            --muted: #a0a0a0;
+            --accent: #00e676;
+            --border: #3d3d3d;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--card-bg);
+            color: var(--accent);
+            padding: 1.5rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        main {
+            max-width: 800px;
+            margin: auto;
+            padding: 2rem 1rem;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h1,
+        h2 {
+            margin-top: 0;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            margin-top: 1.2rem;
+            color: var(--accent);
+        }
+
+        ul {
+            padding-left: 1.2rem;
+            list-style-type: none;
+        }
+
+        ul li::before {
+            content: "🟢";
+            margin-right: 0.5rem;
+        }
+
+        code {
+            background-color: #424242;
+            padding: 0.2rem 0.4rem;
+            border-radius: 6px;
+            color: var(--accent);
+            font-family: monospace;
+        }
+
+        @media (max-width: 600px) {
+            main {
+                padding: 1rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <header>
-        <h1>Guía Completa de Funciones Utilizadas en los Ejercicios</h1>
+        <h1>📗 Resumen de Programación en C</h1>
     </header>
     <main>
-        <!-- 1. printf -->
-        <section id="printf">
-            <h2>1. printf</h2>
-            <p>
-                <strong>Descripción:</strong> Se utiliza para imprimir texto o valores
-                en la consola.
-            </p>
-            <p><strong>Sintaxis:</strong></p>
-            <pre><code>printf("Texto con formato", valores);</code></pre>
-            <p><strong>Ejemplo:</strong></p>
-            <pre><code>int numero = 10;
-printf("El número es: %d\n", numero);</code></pre>
-            <p>
-                <strong>Cuándo usarla:</strong> Siempre que necesites mostrar
-                información al usuario.
-            </p>
-        </section>
 
-        <!-- 2. scanf -->
-        <section id="scanf">
-            <h2>2. scanf</h2>
-            <p>
-                <strong>Descripción:</strong> Se utiliza para leer datos desde la
-                entrada estándar (teclado).
-            </p>
-            <p><strong>Sintaxis:</strong></p>
-            <pre><code>scanf("Formato", &variable);</code></pre>
-            <p><strong>Ejemplo:</strong></p>
-            <pre><code>int numero;
-printf("Ingrese un número: ");
-scanf("%d", &numero);</code></pre>
-            <p>
-                <strong>Cuándo usarla:</strong> Cuando necesites capturar datos
-                ingresados por el usuario.
-            </p>
-        </section>
-
-        <!-- 3. fgets -->
-        <section id="fgets">
-            <h2>3. fgets</h2>
-            <p>
-                <strong>Descripción:</strong> Se utiliza para leer una línea completa
-                de texto, incluyendo espacios.
-            </p>
-            <p><strong>Sintaxis:</strong></p>
-            <pre><code>fgets(buffer, tamaño, stdin);</code></pre>
-            <p><strong>Ejemplo:</strong></p>
-            <pre><code>char cadena[100];
-printf("Ingrese una cadena: ");
-fgets(cadena, 100, stdin);</code></pre>
-            <p>
-                <strong>Cuándo usarla:</strong> Cuando necesites leer cadenas de texto
-                con espacios.
-            </p>
-        </section>
-
-        <!-- 4. strstr -->
-        <section id="strstr">
-            <h2>4. strstr</h2>
-            <p>
-                <strong>Descripción:</strong> Busca una subcadena dentro de otra
-                cadena.
-            </p>
-            <p><strong>Sintaxis:</strong></p>
-            <pre><code>const char *resultado = strstr(cadena, subcadena);</code></pre>
-            <p><strong>Ejemplo:</strong></p>
-            <pre><code>const char *cadena = "palanca";
-const char *subcadena = "pala";
-if (strstr(cadena, subcadena)) {
-    printf("La subcadena está contenida.\n");
-}</code></pre>
-            <p>
-                <strong>Cuándo usarla:</strong> Para verificar si una cadena está
-                contenida dentro de otra.
-            </p>
-        </section>
-
-        <!-- 5. strlen -->
-        <section id="strlen">
-            <h2>5. strlen</h2>
-            <p>
-                <strong>Descripción:</strong> Calcula la longitud de una cadena (sin
-                incluir el carácter nulo <code>'\0'</code>).
-            </p>
-            <p><strong>Sintaxis:</strong></p>
-            <pre><code>size_t longitud = strlen(cadena);</code></pre>
-            <p><strong>Ejemplo:</strong></p>
-            <pre><code>const char *cadena = "Hola";
-printf("La longitud de la cadena es: %lu\n", strlen(cadena));</code></pre>
-            <p>
-                <strong>Cuándo usarla:</strong> Para obtener el tamaño de una cadena.
-            </p>
-        </section>
-
-        <!-- 6. toupper -->
-        <section id="toupper">
-            <h2>6. toupper</h2>
-            <p><strong>Descripción:</strong> Convierte un carácter a mayúscula.</p>
-            <p><strong>Sintaxis:</strong></p>
-            <pre><code>char mayuscula = toupper(caracter);</code></pre>
-            <p><strong>Ejemplo:</strong></p>
-            <pre><code>char letra = 'a';
-printf("Letra en mayúscula: %c\n", toupper(letra));</code></pre>
-            <p>
-                <strong>Cuándo usarla:</strong> Para comparar cadenas ignorando
-                diferencias entre mayúsculas y minúsculas.
-            </p>
-        </section>
-
-        <!-- 7. rand y srand -->
-        <section id="rand-srand">
-            <h2>7. rand y srand</h2>
-            <p>
-                <strong>Descripción:</strong> Se utilizan para generar números
-                pseudoaleatorios.
-            </p>
-            <p><strong>Sintaxis:</strong></p>
-            <pre><code>srand(time(NULL)); // Inicializa la semilla
-int numero = rand(); // Genera un número aleatorio</code></pre>
-            <p><strong>Ejemplo:</strong></p>
-            <pre><code>srand(time(NULL));
-int aleatorio = rand() % 100; // Número entre 0 y 99
-printf("Número aleatorio: %d\n", aleatorio);</code></pre>
-            <p>
-                <strong>Cuándo usarla:</strong> Para generar números aleatorios en tus
-                programas.
-            </p>
-        </section>
-
-        <!-- 8. strcmp -->
-        <section id="strcmp">
-            <h2>8. strcmp</h2>
-            <p><strong>Descripción:</strong> Compara dos cadenas de texto.</p>
-            <p><strong>Sintaxis:</strong></p>
-            <pre><code>int resultado = strcmp(cadena1, cadena2);</code></pre>
-            <p><strong>Ejemplo:</strong></p>
-            <pre><code>const char *cadena1 = "Hola";
-const char *cadena2 = "Mundo";
-if (strcmp(cadena1, cadena2) == 0) {
-    printf("Las cadenas son iguales.\n");
-} else {
-    printf("Las cadenas son diferentes.\n");
-}</code></pre>
-            <p>
-                <strong>Cuándo usarla:</strong> Para comparar si dos cadenas son
-                iguales o determinar su orden lexicográfico.
-            </p>
-        </section>
-
-        <!-- 9. strcpy -->
-        <section id="strcpy">
-            <h2>9. strcpy</h2>
-            <p>
-                <strong>Descripción:</strong> Copia el contenido de una cadena a otra.
-            </p>
-            <p><strong>Sintaxis:</strong></p>
-            <pre><code>strcpy(destino, origen);</code></pre>
-            <p><strong>Ejemplo:</strong></p>
-            <pre><code>char destino[50];
-const char *origen = "Hola Mundo";
-strcpy(destino, origen);
-printf("Destino: %s\n", destino);</code></pre>
-            <p>
-                <strong>Cuándo usarla:</strong> Para duplicar o copiar cadenas de
-                texto.
-            </p>
-        </section>
-
-        <!-- 10. strcat -->
-        <section id="strcat">
-            <h2>10. strcat</h2>
-            <p><strong>Descripción:</strong> Concatena (une) dos cadenas.</p>
-            <p><strong>Sintaxis:</strong></p>
-            <pre><code>strcat(destino, origen);</code></pre>
-            <p><strong>Ejemplo:</strong></p>
-            <pre><code>char destino[50] = "Hola ";
-const char *origen = "Mundo";
-strcat(destino, origen);
-printf("Resultado: %s\n", destino);</code></pre>
-            <p>
-                <strong>Cuándo usarla:</strong> Para unir dos cadenas en una sola.
-            </p>
-        </section>
-
-        <!-- 11. memset -->
-        <section id="memset">
-            <h2>11. memset</h2>
-            <p>
-                <strong>Descripción:</strong> Inicializa un bloque de memoria con un
-                valor específico.
-            </p>
-            <p><strong>Sintaxis:</strong></p>
-            <pre><code>memset(ptr, valor, tamaño);</code></pre>
-            <p><strong>Ejemplo:</strong></p>
-            <pre><code>char buffer[50];
-memset(buffer, 0, sizeof(buffer)); // Inicializa el buffer con ceros</code></pre>
-            <p>
-                <strong>Cuándo usarla:</strong> Para limpiar o inicializar bloques de
-                memoria.
-            </p>
-        </section>
-
-        <!-- 12. free y malloc -->
-        <section id="free-malloc">
-            <h2>12. free y malloc</h2>
-            <p>
-                <strong>Descripción:</strong> Se utilizan para gestionar memoria
-                dinámica.
-            </p>
-            <p><strong>Sintaxis:</strong></p>
-            <pre><code>ptr = malloc(tamaño);
-free(ptr);</code></pre>
-            <p><strong>Ejemplo:</strong></p>
-            <pre><code>int *array = (int *)malloc(5 * sizeof(int));
-if (array == NULL) {
-    printf("Error al asignar memoria.\n");
-    return 1;
-}
-array[0] = 10;
-printf("Primer elemento: %d\n", array[0]);
-free(array);</code></pre>
-            <p>
-                <strong>Cuándo usarla:</strong> Para asignar y liberar memoria
-                dinámica.
-            </p>
-        </section>
-
-        <!-- 13. exit -->
-        <section id="exit">
-            <h2>13. exit</h2>
-            <p>
-                <strong>Descripción:</strong> Termina la ejecución del programa
-                inmediatamente.
-            </p>
-            <p><strong>Sintaxis:</strong></p>
-            <pre><code>exit(código);</code></pre>
-            <p><strong>Ejemplo:</strong></p>
-            <pre><code>if (error) {
-    printf("Ocurrió un error.\n");
-    exit(1);
-}</code></pre>
-            <p>
-                <strong>Cuándo usarla:</strong> Para salir del programa en caso de
-                error o condiciones específicas.
-            </p>
-        </section>
-
-        <!-- 14. Funciones personalizadas -->
-        <section id="funciones-personalizadas">
-            <h2>14. Funciones personalizadas</h2>
-            <p>
-                <strong>Descripción:</strong> Permiten encapsular lógica reutilizable.
-            </p>
-            <p><strong>Sintaxis:</strong></p>
-            <pre><code>tipo_de_retorno nombre_función(tipo_parametro nombre_parametro, ...) {
-    // Código de la función
-    return valor;
-}</code></pre>
-            <p><strong>Ejemplo:</strong></p>
-            <pre><code>double average(double marks[], int size) {
-    double sum = 0;
-    for (int i = 0; i < size; i++) {
-        sum += marks[i];
-    }
-    return sum / size;
-}</code></pre>
-            <p>
-                <strong>Cuándo usarla:</strong> Cuando necesites dividir tu programa
-                en bloques reutilizables.
-            </p>
-        </section>
-
-        <!-- 15. Librerías comunes -->
-        <section id="librerias-comunes">
-            <h2>15. Librerías comunes</h2>
+        <section>
+            <h2>📚 Teoría Básica sobre C</h2>
             <ul>
-                <li>
-                    <code>&lt;stdio.h&gt;</code>: Para entrada y salida estándar
-                    (printf, scanf).
+                <li><strong>Tipos de datos:</strong>
+                    <ul>
+                        <li><code>int</code>: Enteros (e.g., -1, 0, 42).</li>
+                        <li><code>float</code>: Números decimales de precisión simple (e.g., 3.14).</li>
+                        <li><code>double</code>: Números decimales de doble precisión.</li>
+                        <li><code>char</code>: Caracteres individuales (e.g., 'a').</li>
+                        <li><code>void</code>: Tipo vacío, usado para funciones que no retornan valores.</li>
+                    </ul>
                 </li>
-                <li>
-                    <code>&lt;stdlib.h&gt;</code>: Para funciones como rand y malloc.
+                <li><strong>Bucles:</strong>
+                    <ul>
+                        <li><code>for</code>: Se usa para iteraciones con un número conocido de repeticiones.</li>
+                        <li><code>while</code>: Se ejecuta mientras una condición sea verdadera.</li>
+                        <li><code>do-while</code>: Similar a <code>while</code>, pero garantiza al menos una ejecución.</li>
+                    </ul>
                 </li>
-                <li>
-                    <code>&lt;string.h&gt;</code>: Para manipulación de cadenas (strlen,
-                    strstr, strcmp, strcpy, strcat).
+                <li><strong>Condiciones:</strong>
+                    <ul>
+                        <li><code>if</code>: Ejecuta un bloque si la condición es verdadera.</li>
+                        <li><code>else</code>: Ejecuta un bloque si la condición del <code>if</code> es falsa.</li>
+                        <li><code>else if</code>: Evalúa múltiples condiciones.</li>
+                        <li><code>switch</code>: Selecciona entre múltiples casos basados en un valor.</li>
+                    </ul>
                 </li>
-                <li>
-                    <code>&lt;ctype.h&gt;</code>: Para manipulación de caracteres
-                    (toupper).
+                <li><strong>Operadores relacionales:</strong>
+                    <ul>
+                        <li><code>==</code>: Igualdad.</li>
+                        <li><code>!=</code>: Diferente.</li>
+                        <li><code>&lt;</code>: Menor que.</li>
+                        <li><code>&gt;</code>: Mayor que.</li>
+                        <li><code>&lt;=</code>: Menor o igual que.</li>
+                        <li><code>&gt;=</code>: Mayor o igual que.</li>
+                    </ul>
                 </li>
-                <li>
-                    <code>&lt;time.h&gt;</code>: Para trabajar con tiempo y generar
-                    números aleatorios.
+                <li><strong>Operadores lógicos:</strong>
+                    <ul>
+                        <li><code>&&</code>: Y lógico (AND).</li>
+                        <li><code>||</code>: O lógico (OR).</li>
+                        <li><code>!</code>: Negación lógica (NOT).</li>
+                    </ul>
+                </li>
+                <li><strong>Arreglos:</strong>
+                    <ul>
+                        <li>Un arreglo es una colección de elementos del mismo tipo.</li>
+                        <li>Se accede a los elementos usando índices (e.g., <code>arreglo[0]</code>).</li>
+                        <li>Los índices comienzan en 0.</li>
+                    </ul>
+                </li>
+                <li><strong>Entrada y salida:</strong>
+                    <ul>
+                        <li><code>printf</code>: Imprime texto en la consola.</li>
+                        <li><code>scanf</code>: Lee datos desde la entrada estándar.</li>
+                        <li><code>gets</code>: Lee una línea completa de texto (no recomendado por problemas de seguridad).</li>
+                        <li><code>fgets</code>: Alternativa segura para leer cadenas.</li>
+                    </ul>
                 </li>
             </ul>
         </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Maximo Fuentes</p>
-    </footer>
-</body>
 
+        <section>
+            <h2>🧪 Ejercicios</h2>
+
+            <h3>🔢 Ejercicio 1: Operaciones con arreglos</h3>
+            <ul>
+                <li>Se define un arreglo de tamaño fijo (<code>int arreglo[TAMANIO]</code>).</li>
+                <li>Se inicializa con valores aleatorios generados con <code>rand()</code>.</li>
+                <li>Se calcula el promedio sumando todos los elementos y dividiendo por el tamaño del arreglo.</li>
+                <li>Se busca el número más alto y más bajo recorriendo el arreglo y comparando cada elemento.</li>
+                <li>Se imprimen los resultados, incluyendo las posiciones de los valores máximo y mínimo.</li>
+            </ul>
+
+            <h3>➕ Ejercicio 2: Suma de vectores</h3>
+            <ul>
+                <li>Se definen tres arreglos: <code>A</code>, <code>B</code> y <code>C</code>, todos del mismo tamaño.</li>
+                <li>Los arreglos <code>A</code> y <code>B</code> se llenan con valores aleatorios.</li>
+                <li>El arreglo <code>C</code> almacena la suma de los valores correspondientes de <code>A</code> y <code>B</code>.</li>
+                <li>Se imprime el contenido del arreglo <code>C</code> mostrando la suma de cada posición.</li>
+            </ul>
+
+            <h3>📈 Ejercicio 3: Frecuencia</h3>
+            <ul>
+                <li>Se genera un arreglo de 100 números aleatorios entre 1 y 100.</li>
+                <li>Se utiliza un segundo arreglo (<code>frecuencia</code>) para contar cuántas veces aparece cada número.</li>
+                <li>Se recorre el arreglo de frecuencia para determinar el número que más se repite.</li>
+                <li>Se imprimen los resultados, incluyendo el número más repetido y su cantidad de repeticiones.</li>
+            </ul>
+
+            <h3>🔄 Ejercicio 4: Palíndromos</h3>
+            <ul>
+                <li>Se lee una cadena de texto ingresada por el usuario.</li>
+                <li>Se compara el primer carácter con el último, el segundo con el penúltimo, y así sucesivamente.</li>
+                <li>Se utiliza <code>toupper()</code> para ignorar diferencias entre mayúsculas y minúsculas.</li>
+                <li>Se imprime si la cadena es un palíndromo o no.</li>
+                <li>Se permite al usuario realizar múltiples verificaciones mediante un bucle.</li>
+            </ul>
+
+            <h3>🔍 Ejercicio 5: Subcadenas</h3>
+            <ul>
+                <li>Se leen dos cadenas de texto: una principal y una subcadena.</li>
+                <li>Se utiliza la función <code>strstr()</code> para verificar si la subcadena está contenida en la cadena principal.</li>
+                <li>Se imprimen los resultados indicando si la subcadena fue encontrada o no.</li>
+            </ul>
+
+            <h3>🔁 Ejercicio 6: Rotación de vectores</h3>
+            <ul>
+                <li>Se comparan dos vectores para determinar si son iguales considerando rotaciones circulares.</li>
+                <li>Se utiliza un bucle para probar todas las posibles rotaciones del segundo vector.</li>
+                <li>Se emplea la operación modular (<code>(i + offset) % n</code>) para manejar índices circulares.</li>
+                <li>Se imprime si los vectores son iguales o no.</li>
+            </ul>
+
+            <h3>⚽ Ejercicio 7: Resultados de partidos</h3>
+            <ul>
+                <li>Se simulan los resultados de 10 partidos generando goles anotados y recibidos aleatoriamente.</li>
+                <li>Se calculan los promedios de goles anotados y recibidos.</li>
+                <li>Se determina el partido con más goles anotados y el partido con más goles recibidos.</li>
+                <li>Se cuentan los partidos ganados y perdidos.</li>
+                <li>Se imprimen todos los resultados, incluyendo estadísticas detalladas.</li>
+            </ul>
+
+            <h3>📊 Ejercicio 8: Promedio de notas</h3>
+            <ul>
+                <li>Se define un arreglo de tipo <code>double</code> para almacenar las notas.</li>
+                <li>Se implementa una función que calcula el promedio sumando todas las notas y dividiendo por la cantidad.</li>
+                <li>Se imprime el promedio con tres decimales utilizando <code>printf()</code>.</li>
+            </ul>
+        </section>
+
+    </main>
+</body>
 </html>
